@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+   <!-- admin tiles -->
+   
+   <definition name="admin.*.*" template="/WEB-INF/views/admin/{1}/inc/layout.jsp">
+      <put-attribute name="title" value="Tiles tutorial homepage" />
+      <put-attribute name="css" value="{2}.css" />
+      <put-attribute name="header" value="/WEB-INF/views/admin/inc/header.jsp" />
+      <put-attribute name="visual" value="/WEB-INF/views/admin/{1}/inc/visual.jsp" />
+      <put-attribute name="main" value="/WEB-INF/views/admin/{1}/{2}.jsp" />
+      <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+   </definition>
+   
+   <definition name="admin.*" template="/WEB-INF/views/admin/inc/layout.jsp">
+      <put-attribute name="title" value="Tiles tutorial homepage" />
+      <put-attribute name="css" value="{1}.css" />
+      <put-attribute name="header" value="/WEB-INF/views/admin/inc/header.jsp" />
+      <put-attribute name="visual" value="/WEB-INF/views/admin/inc/visual.jsp" />
+      <put-attribute name="main" value="/WEB-INF/views/admin/{1}.jsp" />
+      <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+   </definition>
+
+	<!-- service tiles -->
+	<definition name="service.*" template="/WEB-INF/views/customer/service/inc/layout.jsp">
+		<put-attribute name="title" value="Tiles tutorial homepage" />
+		<put-attribute name="css" value="{1}.css" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="subheader" value="/WEB-INF/views/customer/inc/subheader.jsp" />
+		<put-attribute name="visual" value="/WEB-INF/views/customer/service/inc/visual.jsp" />
+		<put-attribute name="main" value="/WEB-INF/views/customer/service/{1}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+	</definition>
+
+	<!-- notice tiles -->
+	<definition name="notice.*" template="/WEB-INF/views/customer/notice/inc/layout.jsp">
+		<put-attribute name="title" value="Tiles tutorial homepage" />
+		<put-attribute name="css" value="{1}.css" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="subheader" value="/WEB-INF/views/customer/inc/subheader.jsp" />
+		<put-attribute name="visual" value="/WEB-INF/views/customer/notice/inc/visual.jsp" />
+		<put-attribute name="main" value="/WEB-INF/views/customer/notice/{1}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+	</definition>
+	
+	<!-- qna tiles -->
+	<definition name="qna.*" template="/WEB-INF/views/customer/qna/inc/layout.jsp">
+		<put-attribute name="title" value="Tiles tutorial homepage" />
+		<put-attribute name="css" value="{1}.css" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="subheader" value="/WEB-INF/views/customer/inc/subheader.jsp" />
+		<put-attribute name="visual" value="/WEB-INF/views/customer/qna/inc/visual.jsp" />
+		<put-attribute name="main" value="/WEB-INF/views/customer/qna/{1}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+	</definition>
+
+	<definition name="joinus.*" template="/WEB-INF/views/joinus/inc/layout.jsp">
+		<put-attribute name="title" value="Tiles tutorial homepage" />
+		<put-attribute name="css" value="{1}.css" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="visual"
+			value="/WEB-INF/views/joinus/inc/visual.jsp" />
+		<put-attribute name="main" value="/WEB-INF/views/joinus/{1}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+	</definition>
+
+	<!-- 와타시의 범용적인 타일즈즈즈즞 -->
+	<definition name="*.*" template="/WEB-INF/views/inc/layout.jsp">
+		<put-attribute name="css" value="css/{1}/{2}.css" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="visual" value="/WEB-INF/views/inc/visual.jsp" />
+		<put-attribute name="main"   value="/WEB-INF/views/customer/{1}/{2}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+	</definition>
+
+</tiles-definitions>
+
+
+
+
+
+
+
+

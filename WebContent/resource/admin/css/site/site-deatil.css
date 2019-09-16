@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+@IMPORT url("../../../css/reset.css");
+#visual{
+	background:url("../../../images/review-visual.png") no-repeat center;
+}

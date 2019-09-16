@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao 인터페이스를 직접 구현해줄 필요가 사라짐 -->
+<mapper namespace="com.web.dao.SiteDao">
+	<select id="getList" resultType="com.web.entities.Site">
+		select * from site
+	</select>
+	<select id="get" resultType="com.web.entities.Site">
+		select * from site
+		where code =
+		#{code}
+	</select>
+	<update id="addBookCount" parameterType="com.web.entities.Site">
+		UPDATE SITE SET
+		BOOKCOUNT = CONVERT(INT,BOOKCOUNT)+1 where code = #{code}
+	</update>
+	<update id="subBookCount" parameterType="com.web.entities.Site">
+		UPDATE SITE SET
+		BOOKCOUNT = CONVERT(INT,BOOKCOUNT)-1 where code = #{code}
+	</update>
+
+	<update id="update" parameterType="com.web.entities.Site">
+		UPDATE SITE SET NAME=#{name},
+		ADDRESS=#{address}, SEARCH=#{search}, CATEGORY=#{category},
+		SRC=#{src},CONTENT=#{content}
+		WHERE
+		CODE=#{code};
+	</update>
+
+	<delete id="delete">
+		DELETE FROM SITE WHERE CODE=#{code}
+
+	</delete>
+
+
+	<insert id="insert" parameterType="com.web.entities.Site">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM SITE
+		</selectKey>
+
+		INSERT INTO SITE(CODE, NAME, ADDRESS, SEARCH, CATEGORY,SRC,CONTENT)
+		VALUES(#{code},#{name},#{address},#{search},#{category},#{src},#{content})
+	</insert>
+	<update id="addSiteUp" parameterType="String">
+		UPDATE SITE SET GOOD =
+		CONVERT(INT,GOOD)+1 WHERE CODE = #{code}
+	</update>
+	<update id="subSiteUp" parameterType="String">
+		UPDATE SITE SET GOOD =
+		CONVERT(INT,GOOD)-1 WHERE CODE = #{code}
+	</update>
+
+
+</mapper>

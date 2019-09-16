@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+/* ================================ notice, qna reg ==================================== */
+.reg{
+	margin: auto;
+}
+.reg th{
+	width: 30%;
+	text-align: right;
+}
+.reg td{
+	width: 70%;
+}
+.reg td input{
+	width: 80%;
+}
+.reg td textarea{
+	width: 80%;
+}

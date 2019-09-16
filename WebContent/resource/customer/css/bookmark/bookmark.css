@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+#visual{
+	background:url("../../../images/bmark-visual.png") no-repeat center;
+}
+
+#bmark-title{
+	margin-top:5px;
+}
+
+#bmark-title > p{
+	font-size:28px;
+	color:black;
+	margin-top:27px;
+	margin-left:40px;
+}
+
+.list-container{
+	position:relative;
+	background:url("../../../images/bg-content.png") no-repeat center;
+	background-size:contain;
+	width:450px;
+	height:200px;
+	float:left;
+	margin-top:40px;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+
+/* .list-container .site-photo {
+	margin-left:40px;
+	margin-top:40px;
+} */
+/* .list-container{
+	width:inherit;
+	height:inherit;
+} */
+/*------------------------사이트요약/사이트이름----------------------------*/
+.list-container .site-detail{
+	overflow:hidden;
+	width:inherit;
+	position:absolute;
+	top:25px;
+}
+.list-container .site-detail a{
+	text-decoration:none;
+}
+.list-container .site-detail a:hover{
+	color:#cfbeb1;
+}
+.list-container .site-detail .site-nick,
+.list-container .site-detail .site-name{
+	float:left;
+}
+.list-container .site-detail .site-nick {
+	margin-left:40px;
+	line-height:23px;
+	font-size: 23px;
+	color:black;
+}
+.list-container .site-detail .site-name {
+	margin-left:40px;
+	line-height:30px;
+	font-size: 15px;
+	color:rgb(161,161,161);
+} 
+/*------------------------관리자-사이트 장/단점----------------------------*/
+.list-container .admin-review{
+	position:absolute;
+	width:400px;
+	overflow:hidden;
+	bottom:50px;
+}
+.list-container .admin-review li{
+	font-size:11px;
+	overflow:hidden;
+}
+/*---------------------------사이트 주소----------------------------*/
+.list-container .site-address{
+	position:absolute;
+	left:40px;
+	top:60px;
+	font-size: 15px;
+	line-height:15px;
+	color:rgb(161,161,161);
+}
+.list-container .site-address a{
+	text-decoration:none;
+	font-weight:normal;
+	font-size:12px;
+	color:rgb(161,161,161);
+}
+.list-container .site-address a:hover{
+	color:#cfbeb1;
+}
+/*---------------------------사이트 추천수/즐찾수----------------------------*/
+.list-container .site-up{
+	position:absolute;
+	right:60px;
+	bottom:50px;
+}
+.list-container .site-up li{
+	float:left;
+	margin:0;
+	padding-left:2px;
+	padding-right:2px;
+}
+/*---------------------------즐찾 삭제 버튼----------------------------*/
+.list-container .bmark-del{
+	position:absolute;
+	width:10px;
+	height:10px;
+	right:30px;
+	top:20px;
+}
+.list-container .bmark-del a{
+	display:block;
+	width:10px;
+	height:10px;
+}
+
+/*-----------------------------------------------*/
+.type-l{
+	font-size:13px;
+	line-height:20px;
+	margin-left:40px;
+}
+.color-b{
+	color:black;
+}
+.color-g{
+	color:rgb(161,161,161);
+}
+.type-s{
+	font-size:12px;
+	margin-left:40px;
+	line-height:18px;
+}

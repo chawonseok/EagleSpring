@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.NoticeDao">
+	<select id="get" resultType="com.web.entities.Notice">
+		SELECT * FROM NOTICE WHERE
+		CODE=#{code}
+	</select>
+
+	<select id="getList" resultType="com.web.model.NoticeModel">
+		SELECT * FROM (
+		SELECT
+		NOTICE_VIEW.*
+		FROM NOTICE_VIEW
+		WHERE ${param2} LIKE '%${param3}%'
+		) N
+		
+		WHERE NUM BETWEEN
+		(1+(#{param1}-1)*10) AND ((#{param1}*10))
+	
+		<!-- SELECT * FROM (SELECT
+		ROW_NUMBER() OVER (ORDER BY REGDATE DESC) N,
+		NOTICE_VIEW.* FROM
+		NOTICE_VIEW WHERE ${param2} LIKE '%${param3}%') N WHERE NUM BETWEEN
+		(1+(#{param1}-1)*10) AND ((#{param1}*10)) -->
+	</select>
+	
+	<update id="update" parameterType="com.web.entities.Notice">
+		UPDATE NOTICE SET TITLE=#{title}, [CONTENT]=#{content} WHERE
+		CODE=#{code} ;
+	</update>
+
+	<delete id="delete">
+		DELETE FROM NOTICE WHERE CODE=#{code}
+
+	</delete>
+
+
+	<insert id="insert" parameterType="com.web.entities.Notice">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM NOTICE
+		</selectKey>
+
+		INSERT INTO NOTICE(CODE, TITLE, MEMBER_ID, [CONTENT])
+		VALUES(#{code},
+		#{title}, #{member_id},#{content})
+	</insert>
+	
+   <select id="getCount" resultType="Integer">
+   		SELECT COUNT(*) COUNT FROM
+   		(
+   			SELECT
+   			NOTICE_VIEW.*
+   			FROM
+   			NOTICE_VIEW
+   			WHERE ${param1} LIKE '%${param2}%'
+ 		)N
+	</select>
+	
+	<select id="getLastCode" resultType="String">
+		SELECT ISNULL(MAX(CAST(CODE AS INT)), 0) AS CODE FROM NOTICE
+	</select>
+	
+	<select id="getPrev" resultType="com.web.entities.Notice">
+		SELECT TOP 1 * FROM NOTICE where CODE &gt; CAST(#{code} AS INT) order by REGDATE ASC
+	</select>
+
+	<select id="getNext" resultType="com.web.entities.Notice">
+		SELECT TOP 1 * FROM NOTICE where CODE &lt; CAST(#{code} AS INT) order by REGDATE DESC
+	</select>
+	
+   <update id="hitUp">
+		UPDATE NOTICE SET HIT=HIT+1 WHERE CODE=#{code}  
+   </update>
+
+</mapper>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<context:component-scan base-package="com.web.controller"></context:component-scan>
+	
+   <!-- 사용자가 전달한것을 디렉토리에 저장해줌 -->
+   <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ 
+         <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="10000000" />      <!-- 1천만 바이트 = 10메가바이트--> 
+    </bean>
+
+   <bean name="dataSource"
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url"
+         value="jdbc:sqlserver://dev.newlecture.com:1433;databaseName=eagledb" />
+      <property name="username" value="eagle" />
+      <property name="password" value="eagle123" />
+   </bean>
+	
+	<!-- Mybatis SessionFactory -->
+	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:com/web/dao/mybatis/mapper/*.xml"></property>
+	</bean>
+	
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
+   </bean>
+	
+	<bean name="bookmarkDao" class="com.web.dao.mybatis.MyBatisBookmarkDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="memberDao" class="com.web.dao.mybatis.MyBatisMemberDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean id="memberRoleDao" class="com.web.dao.mybatis.MyBatisMemberRoleDao">
+      <property name="sqlSession" ref="sqlSession"/>
+   </bean>
+	
+	<bean name="noticeDao" class="com.web.dao.mybatis.MyBatisNoticeDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="noticeFileDao" class="com.web.dao.mybatis.MyBatisNoticeFileDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="qnADao" class="com.web.dao.mybatis.MyBatisQnADao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="reviewDao" class="com.web.dao.mybatis.MyBatisReviewDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="searchDao" class="com.web.dao.mybatis.MyBatisSearchDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="siteDao" class="com.web.dao.mybatis.MyBatisSiteDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="siteupDao" class="com.web.dao.mybatis.MyBatisSiteupDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean name="assessmentDao" class="com.web.dao.mybatis.MyBatisAssessmentDao">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>	
+
+	
+	<!-- 타일즈설정 -->
+	 <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+       <property name="definitions"  value="/WEB-INF/tiles.xml"/>
+    </bean>
+	
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+       <property name="viewClass"  value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+       <!-- 우선순위 -->
+       <property name="order"  value="1"/>
+    </bean>
+    <!-- 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="order"  value="2"/>
+   </bean>  -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- Tiles처럼 보이게 꼼수쓰기 -->
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<!-- resolver간의 순서를 확인 -->
+		<property name="order" value="2" />
+	</bean> 
+    
+    <!-- 리소스를 위한 예외 디렉토리 설정 -->
+    <mvc:annotation-driven />
+    <mvc:resources location="/resource/" mapping="/resource/**"></mvc:resources>
+	
+</beans>

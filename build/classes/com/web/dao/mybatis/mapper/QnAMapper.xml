@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.QnADao">
+
+
+	<select id="get" resultType="com.web.entities.QnA">
+		select * from QNA where code =
+		#{code}
+	</select>
+
+	<!-- <select id="getList" resultType="web.dto.QnADto"> select * from QNA 
+		</select> -->
+	<select id="getList" resultType="com.web.entities.QnA">
+		<!-- String param2는 문자형이기 때문에 그대로 꽂아너면 title이 'title'이 되버린다 이때는 # 대신 $ 
+			쓰기 -->
+		SELECT * FROM (
+		SELECT
+		QNA_VIEW.*
+		FROM QNA_VIEW
+		WHERE ${param2} LIKE '%${param3}%'
+		) Q
+		
+		WHERE NUM BETWEEN
+		(1+(#{param1}-1)*10) AND ((#{param1}*10))
+	</select>
+	
+	<select id="getCount" resultType="Integer">
+		select count(*) count from
+		(
+		select
+		QNA_VIEW.*
+		from
+		QNA_VIEW
+		WHERE ${param1} LIKE '%${param2}%'
+		)Q
+
+	</select>
+
+	<insert id="insert" parameterType="com.web.entities.QnA">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CONVERT(INT,CODE)),0)+1 AS CODE FROM QNA
+		</selectKey>
+		INSERT INTO
+		QNA(CODE,TITLE,CONTENT,MEMBER_ID)
+		VALUES(#{code}, #{title},
+		#{content},#{member_id})
+	</insert>
+
+	<update id="update" parameterType="com.web.entities.QnA">
+		UPDATE QNA
+		SET TITLE=
+		#{title},
+		CONTENT= #{content}
+		WHERE CODE= #{code}
+	</update>
+
+	<delete id="delete"> <!-- parameterType="String" -->
+		DELETE QNA WHERE CODE = #{code}
+	</delete>
+
+</mapper>

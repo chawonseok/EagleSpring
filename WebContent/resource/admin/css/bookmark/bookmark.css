@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+#visual{
+	background:url("../../../images/bmark-visual.png") no-repeat center;
+}
+
+.list-container{
+	background:url("../../../images/bg-bmark-content.png") no-repeat center;
+	width:450px;
+	height:200px;
+}

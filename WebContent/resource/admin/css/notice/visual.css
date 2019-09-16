@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+#visual{
+	position:absolute;
+	top:0;left:0;
+	background:yellow;
+	height:300px;
+	width:100%;
+	background:url("../../../images/board-visual.png") no-repeat center;
+}

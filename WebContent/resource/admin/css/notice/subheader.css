@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+/* ================================ subheader ==================================== */
+
+
+.sub-menu-table{	
+	font-weight: bold;
+	font-size: 20px;
+	width: 100%;
+	height: 60px;
+	margin: auto;
+}
+.sub-menu-table > tbody > tr > td{
+	text-align: center;
+	border-left: 2px solid #979797;
+	border-bottom: 5px solid #979797;
+}
+
+.sub-menu-table > tbody > tr > td:HOVER{
+	border-bottom: 5px solid #000000;
+}
+.sub-menu-table > tbody > tr > td:FIRST-CHILD+td{
+	border-bottom: 5px solid #000000;
+}
+
+.sub-menu-table > tbody > tr > td:FIRST-CHILD{
+	border-left: none;
+}
+
+.sub-menu-table a{
+	color: #979797;
+	text-decoration: none;
+}
+
+.sub-menu-table a:HOVER{
+	color: #000;	
+	text-decoration: underline;
+}
+.sub-menu-table > tbody > tr > td:FIRST-CHILD+td > a{
+	color: #000;	
+	text-decoration: underline;
+}
+	

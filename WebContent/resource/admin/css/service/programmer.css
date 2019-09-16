@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+/*-----------------------------------intro------------------------------*/
+main .intro{
+	width: 100%;
+	height: inherit;
+	margin: auto;
+	text-align: center;
+	position: relative;
+}
+
+/*-----------------------------------intro-box------------------------------*/
+/* main .intro .intro-box{
+	width: 100%;
+	height: 250px;
+	border: 1px solid red;
+	padding-top: 10px;
+	position: relative;
+}
+main .intro .intro-box .intro-programmer{
+	width: 450px;
+	height: 200px;
+	display: block;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	background-color: #EAEAEA;
+}
+main .intro .intro-box .intro-programmer2{
+	width: 450px;
+	height: 200px;
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background-color: #EAEAEA;
+}
+main .intro .intro-box .intro-programmer-img{
+	width: 180px;
+	height: 150px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+main .intro .intro-box .intro-programmer-txt{
+	width: 180px;
+	height: 150px;
+	border: 1px solid black;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 20px;
+	text-align: left;
+}
+main .intro .intro-box .intro-programmer-txt a{
+	
+} */
+
+
+/*-----------------------------------sub-menu-table------------------------------*/
+.sub-menu-table > tbody > tr > td:FIRST-CHILD{
+	border-bottom: 5px solid #979797;
+}
+.sub-menu-table > tbody > tr > td:FIRST-CHILD{
+	border-left: none;
+}
+.sub-menu-table > tbody > tr > td:FIRST-CHILD > a{
+	color: #979797;	
+	text-decoration: none;
+}
+.sub-menu-table > tbody > tr > td:LAST-CHILD{
+	border-bottom: 5px solid #000000;
+}
+.sub-menu-table > tbody > tr > td:LAST-CHILD > a{
+	color: #000;	
+	text-decoration: underline;
+}
+.sub-menu-table > tbody > tr > td:HOVER{
+	border-bottom: 5px solid #000000;
+}
+.sub-menu-table > tbody > tr > td:FIRST-CHILD > a:HOVER{
+	color: #000;	
+	text-decoration: underline;
+}

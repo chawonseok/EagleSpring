@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao ?명꽣?섏씠?ㅻ? 吏곸젒 援ы쁽?댁쨪 ?꾩슂媛 ?щ씪吏?-->
+<mapper namespace="com.web.dao.AssessmentDao">
+	<select id="get" resultType="com.web.entities.Assessment"> 
+		select * from assessment where siteCode=#{siteCode}
+	</select>
+	<select id="getList" resultType="com.web.model.AssModel"> 
+		select * from ass_view where search LIKE '%'+#{search}+'%' or NAME LIKE '%'+#{search}+'%' or ADDRESS LIKE '%'+#{search}+'%' or CATEGORY LIKE '%'+#{search}+'%'
+		order by convert(int,code) desc
+	</select>
+	<update id="update" parameterType="com.web.entities.Assessment">
+		UPDATE assessment SET COMMENT=#{comment} 
+		WHERE
+		CODE=#{code}
+		AND
+		SITECODE=#{siteCode}
+	</update>
+	<delete id="delete">
+		DELETE FROM assessment WHERE CODE=#{code}
+	</delete>
+	<insert id="insert" parameterType="com.web.entities.Assessment">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+		SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM assessment
+		</selectKey>
+		INSERT INTO assessment(CODE,SITECODE,KIND,COMMENT)
+		VALUES(#{code},#{siteCode},#{kind},#{comment})
+	</insert>
+</mapper>

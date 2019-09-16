@@ -1,0 +1,379 @@
+@CHARSET "UTF-8";
+
+/* body {
+	font-family: "돋움", Arial, sans-serif;
+	font-size: 11px;
+	color: #979797;
+} */
+body .hidden {
+	display: none;
+}
+
+.main {
+	width: 925px;
+	padding-top: 30px;
+	position: absolute;
+}
+
+.main-top {
+	position: relative;
+}
+
+.main-title {
+	font-family: "나눔 고딕", 고딕, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	color: #646464;
+	text-align: center;
+}
+
+.main-bottom {
+	overflow: auto;
+	width: inherit;
+	display: inline-block;
+	min-height: 500px;
+}
+
+.table-form {
+	display: inline-block;
+	border: 0px;
+	width: 50%;
+	min-height: 500px;
+	float: left;
+}
+
+.table {
+	display: inline-block;
+	height: 500px;
+	width: 100%;
+}
+/* .table tbody {
+	min-height: 500px;
+	
+	
+} */
+.table tr {
+	display: inline-block;
+	height: 100px;
+	font-size: 20pt;
+	width: 100%;
+	border: none;
+}
+
+.table td {
+	display: inline-block;
+	float: right;
+	width: 100%;
+	height: 100px;
+	background: green;
+	border: none;
+}
+
+.table input {
+	display: inline-block;
+	text-align: center;
+	
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	border-bottom: 2px solid #e9e9e9;
+	color:black;	
+	font-size: 20pt;
+	height: 100px;
+
+	width: 400px;
+	float: left;
+}
+
+#id-line {
+	width:inherit;
+	height: 100px;
+	overflow: auto;
+}
+
+#id{
+	display: inline-block;
+	float:left;
+	width: 400px;
+	height: 100px;
+
+}
+
+#check-button {
+	display: inline-block;
+	float: left;
+	width: 40px;
+	height: 100px;
+	font-size: 10pt;
+	
+
+}
+
+.table-button {
+	text-align: center;
+	
+}
+.join-form {
+	display: inline-block;
+	background: red;
+	width: 50%;
+	min-height: 500px;
+	float: left;
+}
+/* body .breadcrumb {
+	display: inline-block;
+	font-family: "돋음", Arial, sans-serif;
+	font-size: 11px;
+	color: #979797;
+}
+
+body .breadcrumb>ul {
+	overflow: auto;
+}
+
+body .breadcrumb>ul>li {
+	float: left;
+	padding-left: 10px;
+	background: url("../images/icon-path.png") no-repeat left center;
+}
+
+body .breadcrumb>ul>li:first-child {
+	padding-left: 20px;
+	background: url("../images/icon-home.png") no-repeat left center;
+}
+--- 구조를 이용한 스타일 -----------------------------------------------
+body .main-top-border {
+	border-top: 2px solid #8cba35;
+} */
+-----
+table
+
+ 
+
+---------------------------
+/* body .table {
+	width: 100%;
+}
+
+body .table tr {
+	height: 33px;
+	line-height: 33px;
+}
+
+body .table th, body .table td {
+	border-bottom: 1px solid #e9e9e9;
+	text-align: center;
+}
+
+----- table-list ---------------------------
+body .table-list thead tr:first-child {
+	background: #f5f5f5;
+}
+
+body .table-list thead th {
+	background: url("../images/bg-title-sp.png") no-repeat left center;
+}
+
+body .table-list thead th:first-child {
+	background: none;
+}
+
+body .table-list thead th:nth-child(1) {
+	width: 60px;
+}
+
+body .table-list thead th:nth-child(2) {
+	width: 400px;
+	white-space: nowrap; 공백이 있어도 길다고 다음줄로 내려가지 않도록
+}
+
+body .table-list tbody td:nth-child(2) {
+	display: block; 디폴트는 table-cell, 블럭방식이어야 너비와 오버플로우가 의미있음
+	width: 400px;
+	white-space: nowrap; 공백이 있어도 길다고 다음줄로 내려가지 않도록
+	overflow: hidden; 디스플레이가 블럭방식이어야 의미가 있다
+	text-overflow: ellipsis;
+}
+
+body .table-list thead th:nth-child(3) {
+	width: 100px;
+}
+
+body .table-list tbody td:nth-child(3) {
+	display: block;
+	width: 400px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+body .table-list thead th:nth-child(4) {
+	width: 100px;
+}
+
+body .table-list thead th:nth-child(5) {
+	width: 60px;
+}
+
+body .table-list td:first-child+td {
+	text-align: left;
+	text-indent: 10px;
+}
+
+body .margin-top-l {
+	margin-top: 49px;
+}
+
+body .margin-top-n {
+	margin-top: 10px
+} */
+
+/* --- 이름을 이용한 스타일------------------------------------------ */
+/* body .table-container{
+   border-top: 2px solid #8cba35;
+}
+
+body .table{
+   width:100%;
+}
+
+body .tr{
+   height: 33px;
+   line-height: 33px;
+}
+
+body .td{
+   border-bottom: 1px solid #e9e9e9;
+}
+ */
+
+/* @CHARSET "UTF-8";
+모더나이저땜에 충돌이 생겨서 body로 한정해준다
+body{
+	font-family: "돋움", Arial, sans-serif;
+	font-size: 11px;
+	color: #979797;
+}
+
+body .hidden {
+	display: none;
+}
+
+body .main {
+	padding-left: 35px;
+	padding-top: 45px;
+	width: 720px;
+}
+
+body .main-title {
+	font-family: "a드림고딕3", 고딕, sans-serif;
+	font-size: 21px;
+	font-weight: bold;
+	color: #646464;
+	padding-left: 25px;
+	background: url("../images/icon-main-title.png") no-repeat;
+}
+
+body .breadcrumb {
+	display: inline-block;
+}
+
+body .breadcrumb>ul {
+	overflow: auto;
+	color: #979797;
+	font-family: "맑은고딕", arial, sanserif;
+	font-size: 11px;
+}
+
+body .breadcrumb>ul>li {
+	float: left;
+	padding-left: 10px;
+	background: url("../images/icon-path.png") no-repeat left center;
+}
+
+body .breadcrumb>ul>li:first-child {
+	padding-left: 20px;
+	background: url("../images/icon-home.png") no-repeat left center;
+}
+
+구조를 이용한 스타일 * /
+body .main-top-border{
+	border-top: 2px solid red;
+}
+
+
+---------- table --------------
+body .table {
+	width: 100%;
+}
+
+body .table tr {
+	height: 33px;
+	line-height: 33px;
+}
+
+body .table th, 
+body .table td {
+	border-bottom: 1px solid #e9e9e9;
+	text-align: center;
+}
+
+-------------------table-list--------------------
+body .table-list tr:first-child{
+	background: #f5f5f5;
+}
+
+body .table-list  th{
+	background: url("../images/bg-title-sp.png") no-repeat left center;
+}
+
+body .table-list  th:first-child{
+	background: none;
+	
+}
+
+
+body .table-list  th:first-child{
+	width: 60px;	
+}
+
+body .table-list  td:first-child + td{
+	text-align: left;
+	width: 100px;	
+}
+
+body .text-align-left{
+}
+
+body .text-indent{
+	text-indent: 10px;
+}
+
+body .margin-top-l{
+	margin-top: 49px;
+}
+
+body .margin-top-n{
+	margin-top: 10px;
+} */
+
+/* 이름을 이용한 스타일 */
+/* body .table-container1 {
+	border-top: 2px solid #8cba35;
+	font-family: "a드림고딕2";
+	
+}
+body .table{
+	width: 100%;
+}
+
+body .tr{
+	height: 33px;
+	line-height: 33px; 
+}
+
+body .td{
+	border-bottom: 1px solid #e9e9e9;
+	
+}
+ */

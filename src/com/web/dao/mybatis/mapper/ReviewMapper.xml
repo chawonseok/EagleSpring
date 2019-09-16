@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.ReviewDao">
+   
+   <select id="getad" resultType="com.web.model.ReviewModel">
+      select content from REVIEW_VIEW WHERE SITE_CODE='11100124'
+   </select>
+   <select id="getuser" resultType="com.web.model.ReviewModel">
+            SELECT * FROM(
+   SELECT 
+         ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,CODE,MEMBER_ID,CONTENT,REGDATE
+   FROM REVIEW_VIEW WHERE SITE_CODE=#{param2}
+   )N  WHERE NUM BETWEEN 1+(#{param1}-1)*8 AND #{param1}*8
+   </select>
+   <select id="gethituser" resultType="com.web.model.ReviewModel">      
+         SELECT * FROM
+      (
+      SELECT
+      ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+      REVIEW_VIEW.*
+      FROM
+      REVIEW_VIEW
+      WHERE SITE_CODE=#{code}
+      ) N
+      WHERE NUM BETWEEN
+      1 AND 6
+   </select>
+   
+   <insert id="insert" parameterType="com.web.entities.Review">
+      <selectKey order="BEFORE" keyProperty="code" resultType="String">
+         SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM REVIEW   
+         </selectKey>
+      INSERT INTO REVIEW(SITE_CODE,CODE,MEMBER_ID,CONTENT) VALUES
+      (#{site_code},#{code},#{member_id},#{content})
+   </insert>  
+   <select id="getCount" resultType="Integer">
+      SELECT COUNT(*) FROM(
+   SELECT 
+         ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM FROM REVIEW_VIEW WHERE SITE_CODE=#{code}
+   )N
+   </select> 
+   <delete id="delete">
+      DELETE REVIEW WHERE CODE=#{code}
+   </delete>
+</mapper>

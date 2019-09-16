@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+#visual {
+   background: url("../../../images/review-visual.png") no-repeat center;
+}
+
+
+#review{
+	display: flex;
+	flex-direction: column;
+}
+
+#title-bar{
+	width: 100%;
+	height: 100px;
+	background: gray;
+}
+
+#content{
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	
+	padding-top: 10px;
+}
+
+#content-box{
+	min-width: 700px;  
+	padding-right: 10px;
+	
+	background: yellow;
+}
+
+#content-box img{
+	width: 100px;
+	height: 100px;
+}
+
+#comment-box{
+	min-width: 200px;
+	flex: 1;
+	background: green;
+}

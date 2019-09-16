@@ -1,0 +1,309 @@
+@CHARSET "UTF-8";
+
+#visual {
+   background: url("../../../images/review-visual.png") no-repeat center;
+}
+
+#body .img {
+   
+}
+
+#body .img img {
+   height: 400px;
+   width: 400px;
+   
+   padding-left: 40px;
+}
+
+#body .img {
+   height: 450px;
+   width: 480px;
+   float: left;
+   display: inline-block;
+}
+
+#body .img form{
+   margin-top:3px;
+   text-align:center;
+}
+#review .img a{
+   border: 1px solid #c7c7c7;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #606060;
+    font-size: 15px;
+}
+#review .img #good{
+   text-align:center;
+   border: none;
+    text-decoration: none;
+    color: #606060;
+    font-size: 15px;
+    padding-left: 2px;
+    line-height:15px;
+}
+
+
+#body .sort {
+   text-align: center;
+   margin-left: 100px;
+   position: absolute;
+   top: 950px;
+   right: 220px;
+   padding-top: 5px;
+}
+
+#body .sort>div:LAST-CHILD {
+   float: left;
+   display: inline;
+   position: static;
+}
+
+#body .sort  a {
+   text-decoration: none;
+   color: black;
+}
+
+#body .hitreview {
+   height: 490px;
+   width: 480px;
+   float: left;
+   display: inline-block;
+   text-decoration: none;
+   border-top: 1px dashed #888888;
+}
+
+#body .hitreview li:FIRST-CHILD {
+   font-size: 20px;
+}
+
+#body .hitreview li:FIRST-CHILD+li {
+   font-size: 5px;
+   
+}
+
+#body .hitreview li:FIRST-CHILD+li+li {
+   float: right;
+   background: white;
+}
+
+#body .hitreview li input[type=submit] {
+   background: white;
+   border: 0px;
+   color: #5a5a5a;
+}
+
+#body .hitreview li:LAST-CHILD {
+   height:18px;
+   font-size: 13px;
+   display: block;
+}
+
+#body .hitreview li {
+   font-size: 19px;
+   float: none;
+   display: inline-block;
+   line-height: 18px;
+   width: inherit;
+   position: inherit;
+}
+
+#body .hitreview>ul {
+   margin-right: 40px;
+   margin-left: 40px;
+   padding-top: 10px;
+   border-bottom: 1px dotted #b8b8b8;
+}
+
+#body .hitreview>h1 {
+   font-size: 28px;
+   padding-left: 20px;
+   padding-top: 40px;
+}
+
+#body .admin {
+   height: 450px;
+   width: 475px;
+   display: inline-block;
+   border-left: 1px dashed #888888;
+}
+#body .admin>h2:FIRST-CHILD {
+   
+   padding-left: 40px;
+   font-size: 30px;
+}
+#body .admin>h2:FIRST-CHILD+div+h2 {
+   padding-left: 40px;
+   font-size: 20px;
+}
+
+#body .admin>h2:FIRST-CHILD+div+h2+div+h2 {
+   padding-left: 40px;
+   font-size: 20px;
+}
+
+#body .admin>h2:FIRST-CHILD+div {
+   padding-left: 60px;
+   padding-right: 40px;
+   display: table-cell;
+   height: 150px;
+   width: 460px;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+#body .admin>h2:FIRST-CHILD+div+h2+div {
+   padding-left: 60px;
+   padding-right: 40px;
+   display: table-cell;
+   height: 70px;
+   width: 460px;
+   
+   font-size: 15px;
+   font-weight: bold;
+   
+}
+
+#body .admin>h2:FIRST-CHILD+div+h2+div+h2+div {
+   padding-left: 60px;
+   padding-right: 40px;
+   display: table-cell;
+   height: 70px;
+   width: 460px;
+   font-size: 15px;
+   font-weight: bold;
+   
+}
+
+#body .admin input[type=submit] {
+   width: 80px;
+   height: 40px;
+   border: 0px;
+   display: block;
+   float: right;
+   background: white;
+   position: absolute;
+   top: 440px;
+   right: 40px;
+   border: 1px solid #c7c7c7;
+   border-radius: 10px;
+   color: #606060;
+}
+
+#body .review {
+   height: 490px;
+   width: 475px;
+   float: left;
+   display: inline-block;
+   list-style: none;
+   border-top: 1px dashed #888888;
+   border-left: 1px dashed #888888;
+}
+
+#body .review>* {
+   padding-left: 20px;
+}
+
+#body .review ul:FIRST-CHILD {
+   padding-top: 43px;
+}
+
+#body .review li:FIRST-CHILD {
+   font-size: 20px;
+}
+
+#body .review li:FIRST-CHILD+li {
+   font-size: 5px;
+}
+
+#body .review li:FIRST-CHILD+li+li {
+   float: right;
+   background: white;
+}
+
+#body .review li input[type=submit] {
+   
+   background: white;
+   border: 0px;
+   color: #5a5a5a;
+}
+
+#body .review li:LAST-CHILD {
+   height:18px;
+   font-size: 13px;
+   display: block;
+}
+
+#body .review li {
+   font-size: 19px;
+   float: none;
+   display: inline-block;
+   line-height: 18px;
+   width: inherit;
+   position: inherit;
+}
+
+#body .review ul {
+      margin-right: 40px;
+   margin-left: 40px;
+   padding-top: 10px;
+   border-bottom: 1px dotted #b8b8b8;
+}
+
+#note-form fieldset {
+   position: absolute;
+   top: 890px;
+   left: 40px;
+   margin: auto;
+   border: 1px solid #838383;
+   border-radius: 10px;
+}
+
+#note-form textarea {
+   width: 330px;
+   height: 100px;
+   display: block;
+   float: left;
+   text-indent: 5px;
+   resize: none;
+   border: 0px;
+   border-radius: 10px;
+}
+
+#note-form input[type=submit] {
+   width: 70px;
+   height: 100px;
+   display: block;
+   float: left;
+   background: white;
+   border: 0px;
+   border-radius: 10px;
+}
+/* <-------------level1-----------------> */
+#head {
+   padding-top:20px;
+   height:40px;
+   text-align:left;
+   font-weight: bold;
+}
+#head a:FIRST-CHILD{
+   text-align:left;
+   font-weight: bold;
+   text-decoration: none;
+   color: #000;
+}
+#head a:FIRST-CHILD:HOVER{
+   text-decoration: underline;
+}
+
+#head a:LAST-CHILD {
+   float: right;
+   text-decoration: none;
+   color: black;
+}
+
+}
+main {
+   width: calc(100% -205px);
+   float: left;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao 인터페이스를 직접 구현해줄 필요가 사라짐 -->
+<mapper namespace="com.web.dao.BookmarkDao">
+	<select id="getList" resultType="com.web.model.BookmarkModel"> 
+		select * from bookmark_view
+		where member_id = #{member_ID}
+	</select>
+	<select id="getCategoryList" resultType="com.web.model.BookmarkModel"> 
+		select * from bookmark_view
+		where member_id = #{param1} and
+			  category = #{param2}
+	</select>
+	<select id="get" resultType="com.web.model.BookmarkModel">
+		select * from bookmark_view
+		where site_code = #{param1} and member_id = #{param2}
+	</select>
+	<insert id="insert" parameterType="com.web.entities.Bookmark">
+		insert into
+			bookmark(member_id, site_code)
+			values(#{member_ID},#{site_code})
+	</insert>
+	<delete id="delete">
+		delete bookmark 
+		where site_code = #{param1} and
+	  	      member_id = #{param2}
+	</delete>
+</mapper>

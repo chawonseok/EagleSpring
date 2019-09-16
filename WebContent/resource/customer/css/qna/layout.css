@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+@IMPORT url("../../../css/reset.css");
+@IMPORT url("../../../css/header.css");
+@IMPORT url("../../../css/footer.css");
+@IMPORT url("subheader.css");
+@IMPORT url("reg.css");
+@IMPORT url("visual.css");
+
+.content-container{
+	/* background:#80fcff; */
+	height:inherit;
+	width:960px;
+	margin:auto;
+	overflow:auto;
+}
+body .hidden{
+	display:none;
+}
+/*-----------------------------------body------------------------------*/
+#body{
+	min-height:1000px;
+}
+#top{
+	position:relative;
+	height:300px;
+	width:inherit;
+}
+.main{
+	margin: auto;
+	padding-top: 20px;
+}
+main .notice{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+/* ---------------------- .table ---------------------------------------------- */
+body .table{
+	width: 100%;
+}
+body .tr{
+	height: 50px;
+}
+body .tr:HOVER{
+	background: #F6F6F6;
+}
+
+body .th{
+	text-align: center;
+	border-bottom: 2px solid black;
+	/* border-bottom: 2px solid #979797; */
+	background: url("../../../images/table-side-bar.png") no-repeat left;
+	background-color: #F9F9F9 	
+}
+
+body .th:first-child{
+	width: 100px;
+	background-image: none;
+}
+body .th:first-child+th+th{
+	width: 150px;
+}
+body .th:last-child{
+	width: 150px;
+	
+}
+body .td{
+	text-align: center;
+	border-bottom: 2px solid #979797;
+	background: url("../../../images/table-side-bar.png") no-repeat left;
+}
+body .td:FIRST-CHILD{
+	background: none;
+}
+body .td:FIRST-CHILD+td{
+	text-align: left;
+	padding-left: 30px;
+}
+
+body .td a{
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+}
+body .td a:HOVER{
+	text-decoration: underline;
+	color: #979797;
+}
+
+/* ---------------------- .search ---------------------------------------------- */
+main .reg{
+	text-align: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+/* ---------------------- .search ---------------------------------------------- */
+.search-form{
+	display: inline-block;
+	overflow: auto;
+	float: right;
+	margin: auto;
+	position: relative;
+	width: 300px;
+	height: 30px;
+}
+
+.search-form .search-select{
+	height: 24px;
+	position: absolute;
+	left: 0;
+	
+	
+}
+
+.search-form input[type=text]{
+	position:absolute;
+	height: 20px;
+	left: 85px;
+}
+.search-form input[type=submit]{
+	background: url("../../../images/zoom.png") no-repeat center;
+	background-size: cover;	
+	position:absolute;
+	right:0px;
+		
+	width:31px;
+	height: 24px;
+	
+	border: 0px;
+	
+	text-indent: -999px;
+}
+
+/* ---------------------- .page ---------------------------------------------- */
+body .page li{
+	float: left;
+}
+body .page a{
+	color: #000000;
+	padding-left: 10px;
+	text-decoration: none;
+}
+body .page a:HOVER{
+	color: #979797;
+	text-decoration: underline;
+}
+/* ---------------------- #search-form ---------------------------------------------- */
+
+
+

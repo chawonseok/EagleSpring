@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+#footer{
+   margin-top:20px;
+    background:gray;
+      min-height:200px;   
+}
+#footer .content-container{
+   width:900px;
+}
+#footer .content-container .copyright{
+   margin-top:20px;
+   /* position:absolute; */
+}
+#footer .content-container .copyright p{
+   text-align:center;
+   color:#464646;
+   font-size:13px;
+   line-height:20px;
+   
+}

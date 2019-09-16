@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao 인터페이스를 직접 구현해줄 필요가 사라짐 -->
+<mapper namespace="com.web.dao.SiteupDao">   
+   <select id="get" resultType="com.web.entities.Siteup">
+      SELECT * FROM SITEUP
+      WHERE SITECODE = #{param1} AND MEMBERID = #{param2}
+   </select>
+   
+   <delete id="delete" parameterType="String">
+      DELETE FROM SITEUP WHERE SITECODE=#{param1} and MEMBERID = #{param2}
+   </delete>
+   <insert id="insert" parameterType="com.web.entities.Siteup">
+      INSERT INTO SITEUP(SITECODE, MEMBERID, SITEGOOD)
+      VALUES(#{siteCode},#{memberId},#{siteGood})
+   </insert>
+   
+</mapper>

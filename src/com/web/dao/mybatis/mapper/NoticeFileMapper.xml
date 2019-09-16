@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.NoticeFileDao">
+
+	<select id="getList" resultType="com.web.entities.NoticeFile">
+		SELECT * FROM NOTICEFILE WHERE
+		NOTICECODE = #{noticeCode}
+	</select>
+
+	<update id="update" parameterType="com.web.entities.NoticeFile">
+		<!-- 업데이트는 #{name} -->
+		UPDATE NOTICEFILE SET SRC=#{src} WHERE
+		CODE=#{code} ;
+	</update>
+
+	<!-- parameterType="String" -->
+	<delete id="delete">
+		DELETE FROM NOTICEFILE WHERE CODE=#{code}
+	</delete>
+
+	<!-- selectKey 우선실행 before, keyproperty로 네이밍 -->
+
+	<insert id="insert" parameterType="com.web.entities.NoticeFile">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM NOTICEFILE
+		</selectKey>
+		INSERT INTO NOTICEFILE(CODE, SRC, NOTICECODE)
+		VALUES(#{code}, #{src},
+		#{noticeCode})
+	</insert>
+
+
+</mapper>

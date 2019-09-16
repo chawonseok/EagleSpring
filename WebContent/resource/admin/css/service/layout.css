@@ -1,0 +1,122 @@
+@CHARSET "UTF-8";
+@IMPORT url("../../../css/reset.css");
+@IMPORT url("../../../css/header.css");
+@IMPORT url("../../../css/footer.css");
+@IMPORT url("subheader.css");
+@IMPORT url("visual.css");
+
+.content-container{
+	/* background:#80fcff; */
+	height:inherit;
+	width:960px;
+	margin:auto;
+	overflow:auto;
+}
+body .hidden{
+	display:none;
+}
+/*-----------------------------------body------------------------------*/
+#body{
+	min-height:1000px;
+}
+#top{
+	position:relative;
+	height:300px;
+	width:inherit;
+}
+.main{
+	margin: auto;
+	padding-top: 20px;
+}
+
+/*-----------------------------------intro------------------------------*/
+main .intro{
+	width: 100%;
+	height: 800px;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	background-color: #F9F9F9;
+}
+
+main .intro .intro-img{
+	position: absolute;
+	width: 260px;
+	height: 180px;
+	background: url("../../../images/service-visual.png") no-repeat center;
+	left: 100px;
+	top: 20px;
+}
+main .intro .intro-txt{
+	position: absolute;
+	display: inline-block;
+	left: 480px;
+	top: 50px;
+	font-size: 22px;
+	text-align: left;
+}
+main .intro .intro-txt a+a{
+	font-size: 26px;
+	font-weight: bold;
+	padding-top: 30px;
+	padding-left: 50px;
+}
+main .intro .intro-txt a:LAST-CHILD{
+	font-size: 16px;
+	font-weight: normal;
+	padding-top: 10px;
+	padding-left: 0px;
+	text-align: center;
+}
+
+
+main .intro .intro-review{
+	position: absolute;
+	background: url("../../../images/intro-review.png") no-repeat center;
+	width: 200px;
+	height: 180px;
+	left: 150px;
+	top: 280px;
+}
+main .intro .intro-review-txt{
+	position: absolute;
+	display: inline-block;
+	left: 480px;
+	top: 300px;
+	font-size: 26px;
+	text-align: left;
+	font-weight: bold;
+}
+main .intro .intro-review-txt a+a{
+	font-size: 22px;
+	font-weight: normal;
+	padding-top: 30px;
+	padding-left: 50px;
+}
+
+main .intro .intro-write{
+	position: absolute;
+	background: url("../../../images/intro-write.png") no-repeat center;
+	width: 200px;
+	height: 200px;
+	left: 180px;
+	top: 550px;
+}
+main .intro .intro-write-txt{
+	position: absolute;
+	display: inline-block;
+	left: 480px;
+	top: 570px;
+	text-align: left;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+main .intro .intro-write-txt a+a{
+	font-size: 26px;
+	font-weight: bold;
+	padding-top: 30px;
+	padding-left: 50px;
+}
+
+
